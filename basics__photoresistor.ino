@@ -11,6 +11,18 @@
  * - Analog pins: Pins on the HERO that can read many different values instead of just HIGH/LOW.
  * - Photo Resistor: Changes it's resistance depending on how much light it senses.
  */
+
+/*
+When setting a pin to INPUT mode:
+1. Voltage Sensing: The pin is used to sense voltage levels, either reading an analog signal (for analog pins) or a high/low digital signal (for digital pins). The pin does not provide power but instead reads the state of the external circuit.
+
+2. High Impedance: In input mode, the pin is in a high-impedance state, which means it has very high resistance. This allows it to read the voltage without significantly affecting the external circuit. In essence, the pin draws very little current from the circuit, just enough to measure the voltage.
+
+3. Digital Pins in Input Mode: When you set a digital pin as an input using pinMode(pin, INPUT), the pin can detect two states: HIGH (if the voltage is close to 5V) or LOW (if the voltage is close to 0V or ground).
+
+4. Analog Pins in Input Mode: Analog pins are automatically set to input mode when using analogRead(). These pins can detect a range of voltages, not just two states like digital pins, because they are connected to an analog-to-digital converter (ADC).
+*/
+
 #include "Arduino.h"
 
 // Our photoresistor will give us a reading of the current light level on this analog pin
