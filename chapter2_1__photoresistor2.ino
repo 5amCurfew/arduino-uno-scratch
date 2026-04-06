@@ -1,18 +1,4 @@
 /*
- * 30 Days - Lost in Space
- * Day 7 - We still need to keep an eye on this
- *
- * Learn more at https://learn.inventr.io/adventure
- *
- * Now we will use the circuit from Day 6 and use the value read from the photoresistor
- * to simulate charging our lander's battery.  Our battery is currently drained
- * (current level is 0) and we will stop charging once the battery is full.
- *
- * Alex Eschenauer
- * David Schmidt
- */
- 
-/*
  * Arduino concepts introduced/documented in this lesson.
  * - "+=" operator.
  * - defining our own functions.

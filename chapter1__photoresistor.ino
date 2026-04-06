@@ -1,18 +1,4 @@
 /*
- * Arduino concepts
- * - unsigned int: A 16 bit value containing numbers from 0 to 65535
- * - Serial Monitor: Allows the HERO to display text in an Arduino IDE window.
- * - Serial.begin(): Used to initialize the Serial Monitor.
- * - Serial.print(): Display some text in the Arduino IDE Serial Monitor window.
- * - Serial.println(): Display test in the Serial Monitor followed by a newline.
- * - analogRead(): Read a value from an analog pin that is based on how much voltage is on the pin (0-5v)
- *
- * Parts and electronics concepts introduced in this lesson.
- * - Analog pins: Pins on the HERO that can read many different values instead of just HIGH/LOW.
- * - Photo Resistor: Changes it's resistance depending on how much light it senses.
- */
-
-/*
 When setting a pin to INPUT mode:
 1. Voltage Sensing: The pin is used to sense voltage levels, either reading an analog signal (for analog pins) or a high/low digital signal (for digital pins). The pin does not provide power but instead reads the state of the external circuit.
 

@@ -17,11 +17,19 @@
  *       indicated on the board by preceding those pin numbers on the HERO board
  *       with a tilde ('~') character.  Only those pins support PWM and analogWrite().
  */
+
+//  A normal digital output is binary: either 0 V or 5 V.
+//  PWM rapidly alternates between 0 V and 5 V.
+//  The fraction of time spent HIGH determines the effective analog level.
+//  It is producing a fast binary waveform whose average value over time represents a range from 0 to 255.
+//  effective average voltage ≈ 5V × (PWM value / 255)
+
 const byte RED_PIN = 11;    // PWM pin controlling the red leg of our RGB LED
-const byte GREEN_PIN = 10;  // PWM pin ccontrolling the green leg of our RGB LED
-const byte BLUE_PIN = 9;    // PWM pin ccontrolling the blue leg of our RGB LED
+const byte GREEN_PIN = 10;  // PWM pin controlling the green leg of our RGB LED
+const byte BLUE_PIN = 9;    // PWM pin controlling the blue leg of our RGB LED
 const unsigned int DELAY = 500;
- 
+int i;
+
 void setup() {
   // Set each of our PWM pins as OUTPUT pins
   pinMode(RED_PIN, OUTPUT);
@@ -42,16 +50,10 @@ void loop() {
   delay(2*DELAY);
   displayColor(0, 0, 255);
   delay(2*DELAY);
-  displayColor(randomIntensity(), randomIntensity(), randomIntensity());
-  delay(DELAY);
-  displayColor(randomIntensity(), randomIntensity(), randomIntensity());
-  delay(DELAY);
-  displayColor(randomIntensity(), randomIntensity(), randomIntensity());
-  delay(DELAY);
-  displayColor(randomIntensity(), randomIntensity(), randomIntensity());
-  delay(DELAY);
-  displayColor(randomIntensity(), randomIntensity(), randomIntensity());
-  delay(2*DELAY);
+  for (i = 0; i < 5; i++){
+    displayColor(randomIntensity(), randomIntensity(), randomIntensity());
+    delay(DELAY);
+  }
   displayColor(0, 0, 0);  // OFF!
   delay(2*DELAY);
 }
