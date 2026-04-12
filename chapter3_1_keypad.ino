@@ -19,7 +19,7 @@ const char BUTTONS[ROWS][COLS] = {
   { '*', '0', '#', 'D' }   // Row 3
 };
 
-// Here it sets the pins as digitalWrite(_pin, 1)
+// Here it sets the pin pinMode, digitalWrite(_pin, 1)
 // for reference, see the library
 Keypad heroKeypad = Keypad(makeKeymap(BUTTONS), ROW_PINS, COL_PINS, ROWS, COLS);
 
