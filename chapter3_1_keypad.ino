@@ -10,6 +10,8 @@ const byte COLS = 4;
 const byte ROW_PINS[ROWS] = { 5, 4, 3, 2 };
 const byte COL_PINS[COLS] = { 6, 7, 8, 9 };
 
+// For a single character we need to use single quotes to indicate that there
+// is just ONE character ('A')
 const char BUTTONS[ROWS][COLS] = {
   { '1', '2', '3', 'A' },  // Row 0
   { '4', '5', '6', 'B' },  // Row 1
