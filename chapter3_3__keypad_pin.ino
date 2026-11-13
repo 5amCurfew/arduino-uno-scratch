@@ -35,23 +35,21 @@ bool access_allowed;
 
 bool validatePIN() {
     Serial.println("Enter PIN to continue.");
-    
+    char candidate[PIN_LENGTH];
     for (int i = 0; i < PIN_LENGTH; i++) {
         char button_character = heroKeypad.waitForKey();
         tone(BUZZER_SIGNAL_PIN, 880, 100);
-        
-        if (current_pin[i] != button_character) {
-            Serial.println();
-            Serial.print("WRONG PIN DIGIT: ");
-            Serial.println(button_character);
-            return false;
-        }
         Serial.print("*");
+        candidate[i] = button_character;
     }
-    
     Serial.println();
-    Serial.println("Device Successfully Unlocked!");
-    return true;
+    if (memcmp(candidate, current_pin, PIN_LENGTH) == 0) { // Compare the entered PIN with the current PIN
+        Serial.println("Device Successfully Unlocked!");
+        return true;
+    } else {
+        Serial.println("Incorrect PIN.");
+        return false;
+    }
 };
 
 bool enterNewPIN() {
